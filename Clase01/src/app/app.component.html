@@ -1,8 +1,7 @@
 
-<div class="container mt-5">
+<!-- <div class="container mt-5">
   <div class="row justify-content-center">
       <div class="col-md-6">
-          <h2 class="mb-4">Inicio de Sesión</h2>
           <form>
               <div class="form-group">
                   <label for="inputEmail">Edad uno:</label>
@@ -27,5 +26,11 @@
           </form>
       </div>
   </div>
-</div>
-<router-outlet/>
+</div> -->
+
+<header class="header">
+  <button routerLink="login"  class="error__button error__button--active">LOGIN</button>
+  <button routerLink="bienvenida"  class="error__button error__button--active">BIENVENIDO</button>
+</header>
+
+<router-outlet></router-outlet>
