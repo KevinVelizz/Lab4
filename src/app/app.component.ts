@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
+import { ErrorComponent } from './components/error/error.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, FormsModule, RouterLink, LoginComponent, BienvenidoComponent, ErrorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   edadUno = 0;
   edadDos = 0;
@@ -22,6 +27,11 @@ export class AppComponent {
     {
       this.promedio = this.suma / 2;
     }
+  }
+
+  consola()
+  {
+    console.log("desde la consola");
   }
 
   btnLimpiar()
