@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "appandroid-a5013"
+  },
+  "targets": {
+    "appandroid-a5013": {
+      "hosting": {
+        "clase01": [
+          "appandroid-a5013"
+        ]
+      }
+    }
+  }
+}

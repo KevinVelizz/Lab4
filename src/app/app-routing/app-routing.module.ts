@@ -1,15 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from '../components/login/login.component';
-import { BienvenidoComponent } from '../components/bienvenido/bienvenido.component';
-import { ErrorComponent } from '../components/error/error.component';
 
 export const routes: Routes = [
-  {path:"login", loadComponent:()=>LoginComponent},
-  {path:"bienvenida", loadComponent:()=>BienvenidoComponent},
-  {path:"error", loadComponent:()=>ErrorComponent},
-  // {path: '', redirectTo: 'bienvenida', pathMatch: 'full'},
-  {path:"**", loadComponent:()=>ErrorComponent}
+  {path:"login", loadComponent: () =>
+    import('../components/login/login.component').then(
+      (m) => m.LoginComponent
+    ),},
+  {path:"bienvenida", loadComponent: () =>
+    import('../components/bienvenido/bienvenido.component').then(
+      (m) => m.BienvenidoComponent
+    ),},
+  {path:"error", loadComponent: () =>
+    import('../components/error/error.component').then(
+      (m) => m.ErrorComponent
+    ),},
+  {path:"register", loadComponent: () =>
+    import('../components/register/register.component').then(
+      (m) => m.RegisterComponent
+    ),},
+  {path: '', redirectTo: 'bienvenida', pathMatch: 'full'},
+  {path:"**", loadComponent: () =>
+    import('../components/error/error.component').then(
+      (m) => m.ErrorComponent
+    ),}
 ];
 
 @NgModule({
